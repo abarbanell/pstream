@@ -13,7 +13,7 @@ import {AuthService} from "../../services/auth.service";
             &#9776;
         </button>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
-            <a style="color:black" class="navbar-brand" href="#">A2B4O2OM</a>
+            <a style="color:black" class="navbar-brand" href="#">pstream</a>
             <ul class="nav navbar-nav">
                 <li class="nav-item">
                     <a [routerLinkActive]="['active']" [routerLink]="['/public']" class="nav-link btn btn-success-outline">Public</a>
