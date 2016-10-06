@@ -4,5 +4,5 @@
   "userInfoNameField": "displayName",
   "implicitGrantUrl": "https://accounts.google.com/o/oauth2/auth?redirect_uri=__callbackUrl__&response_type=token&client_id=__clientId__&scope=__scopes__",
   "clientId": "166744140766-g6cllrmbleqlmqs2gu63680ddtd5iks6.apps.googleusercontent.com",
-  "scopes": "https://www.googleapis.com/auth/userinfo.profile"
+  "scopes": "https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/drive.photos.readonly"
 }
