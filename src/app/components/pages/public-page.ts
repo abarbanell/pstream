@@ -17,10 +17,17 @@ import {AuthService} from "../../services/auth.service";
 <div class="pos-f-t">
     <navbar></navbar>
 </div>
-<div>I'm public: {{xsrfCookie}}</div>
-<div>I'm logged in: {{authenticated}}</div>
-<div class="row">
-<div class="col-xs-3">{{idCookie }}</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-5">
+            <table class="table"> 
+                <tr><td>I'm public: </td><td> {{xsrfCookie}}</td></tr>
+                <tr><td>I'm logged in: </td><td> {{authenticated}}</td></tr>
+                <tr><td>Cookie: </td><td>{{idCookie }}</td></tr>
+                <tr><td>Token:</td><td> {{token}}</td></tr>
+            </table>
+        </div>
+    </div>
 </div>
 `
 })
@@ -34,5 +41,9 @@ export class PublicPage {
 
     get authenticated() {
         return this.authService.isAuthenticated();
+    }
+
+    get token() {
+        return this.authService.getSession().token;
     }
 }
