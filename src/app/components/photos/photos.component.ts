@@ -13,7 +13,7 @@ import {PhotoService} from '../../services/photos.service';
             <td> camera </td>
             <td> altitude </td>
             </thead>
-            <tr *ngFor="#photo of photos">
+            <tr *ngFor="let photo of photos">
             <td> {{photo.name}} </td>
             <td> {{photo.createdTime}} </td>
             <td> <img src="{{photo.thumbnailLink}}"> </td>
@@ -26,9 +26,17 @@ import {PhotoService} from '../../services/photos.service';
     
 })
 export class PhotosComponent {
+    errorMessage: string;
     photos=[];
-    constructor(photoService: PhotoService) {
-        this.photos = photoService.getPhotos();
+    constructor(private photoService: PhotoService) {}
+
+    ngOnInit() { this.getPhotos();}
+
+    getPhotos() {
+            this.photoService.getPhotos().subscribe(
+                result => { this.photos = result},
+                error => { this.errorMessage = <any>error}
+            )
     }
 
 }  
