@@ -9,6 +9,7 @@ import {LoggedoutPage} from "./components/pages/loggedout-page";
 import {WindowService} from "./services/window.service";
 import {AuthService} from "./services/auth.service";
 import {CookieService} from "./services/cookies.service";
+import {PhotoService} from "./services/photos.service";
 import {HttpModule} from "@angular/http";
 import {ProtectedDirective} from "./directives/protected.directive";
 import {Navbar} from "./components/navbar/navbar";
@@ -25,6 +26,7 @@ const routes: Routes = [
     providers: [
         CookieService,
         AuthService,
+        PhotoService,
         WindowService,
         {provide: LocationStrategy, useClass: HashLocationStrategy}
     ],

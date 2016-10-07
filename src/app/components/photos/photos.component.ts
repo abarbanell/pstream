@@ -21,21 +21,23 @@ import {PhotoService} from '../../services/photos.service';
             <td> {{photo.imageMediaMetadata.location.altitude}} m </td>
             </tr>
         </table>
+
+        last error: {{errorMsg}}
         `,
         providers: [PhotoService]
     
 })
 export class PhotosComponent {
-    errorMessage: string;
-    photos=[];
+    private errorMessage: string;
+    private photos=[];
 
     constructor(private photoService: PhotoService) {}
 
-    ngOnInit() { 
+    private ngOnInit() { 
         this.getPhotos();
     }
 
-    getPhotos() {
+    private getPhotos() {
         this.photoService.getPhotos().subscribe(
             result => { this.photos = result },
             error => { this.errorMessage = <any>error }
