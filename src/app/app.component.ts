@@ -5,10 +5,10 @@ import "rxjs/add/operator/map";
 @Component({
     selector: 'app',
     template: `
-<div class="container-fluid">
-    <router-outlet></router-outlet>
-</div>
-`
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+            `
 })
 export class AppComponent {
 }
